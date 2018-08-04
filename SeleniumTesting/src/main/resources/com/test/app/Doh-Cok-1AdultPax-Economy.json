@@ -1,0 +1,237 @@
+{
+	"url": "https://nspuat.qatarairways.com.qa/nsp/views/search.xhtml",
+	"actions": 
+	[
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//label[@for='searchFlightsForm:tirpType:1']",
+			"actionType": "CLICK",
+			"description": "NSP_SEARCH_PAGE_TRIP_TYPE"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "fromAddress",
+			"value": "DOH",
+			"actionType": "FILL_TEXT",
+			"description": "NSP_SEARCH_PAGE_FROM_ADDRESS"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "toAddress",
+			"value": "COK",
+			"actionType": "FILL_TEXT",
+			"description": "NSP_SEARCH_PAGE_TO_ADDRESS"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "onwardDate",
+			"value": "11-Dec-2018",
+			"actionType": "FILL_TEXT",
+			"description": "NSP_SEARCH_PAGE_ONWARD_DATE"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//button[@class='ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all']",
+			"actionType": "CLICK",
+			"description": "NSP_SEARCH_PAGE_DATE_PICKER_CLOSE"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "searchFlightsForm:days",
+			"value": "1",
+			"actionType": "CLICK",
+			"description": "NSP_SEARCH_PAGE_ADULT"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "searchFlightsForm:months",
+			"value": "0",
+			"actionType": "CLICK",
+			"description": "NSP_SEARCH_PAGE_CHILD"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "searchFlightsForm:years",
+			"value": "0",
+			"actionType": "CLICK",
+			"description": "NSP_SEARCH_PAGE_INFANT"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//button[@id='searchFlightsForm:roSearchFlights']",
+			"actionType": "CLICK",
+			"description": "NSP_SEARCH_PAGE_SEARCH"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//span[@data-val='0,,0']",
+			"value": "4000",
+			"actionType": "WAIT",
+			"description": "NSP_WAIT_FOR_INDEX_PAGE_LOAD"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//span[@data-val='0,,0']",
+			"actionType": "CLICK",
+			"description": "NSP_INDEX_PAGE_FLIGHT_CABIN_SELECTION"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//button[@id='indexItinerarayContinue']",
+			"actionType": "CLICK",
+			"description": "NSP_INDEX_PAGE_CONTINUE"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//input[@id='continueToFlightSelection']",
+			"actionType": "WAIT",
+			"description": "NSP_WAIT_FOR_FLIGHT_REVIEW_PAGE_LOAD"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//input[@id='continueToFlightSelection']",
+			"actionType": "CLICK",
+			"description": "NSP_FLIGHT_REVIEW_PAGE_CONTINUE"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "paxRepeat:0:title",
+			"actionType": "WAIT",
+			"description": "NSP_PAX_DETAILS_PAGE_TITLE"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "paxRepeat:0:title",
+			"value": "Mr",
+			"actionType": "CLICK",
+			"description": "NSP_PAX_DETAILS_PAGE_TITLE"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "paxRepeat:0:firstName",
+			"value": "Sadheesh",
+			"actionType": "FILL_TEXT",
+			"description": "NSP_PAX_DETAILS_PAGE_FIRST_NAME"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "paxRepeat:0:lastName",
+			"value": "Kumar",
+			"actionType": "FILL_TEXT",
+			"description": "NSP_PAX_DETAILS_PAGE_LAST_NAME"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//button[@class='btn btn-style passen-btn-align btn-4 btn-4c arrow-right-btn']",
+			"actionType": "CLICK",
+			"description": "NSP_PAX_DETAILS_PAGE_CONTINUE"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "contactCountry",
+			"value": "India",
+			"actionType": "CLICK",
+			"description": "NSP_PAX_DETAILS_PAGE_CONTACT_COUNTRY"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "phoneType",
+			"value": "Mobile",
+			"actionType": "CLICK",
+			"description": "NSP_PAX_DETAILS_PAGE_CONTACT_TYPE"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "contactNumber",
+			"value": "9876543210",
+			"actionType": "FILL_TEXT",
+			"description": "NSP_PAX_DETAILS_PAGE_CONTACT_NUMBER"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "email",
+			"value": "shibu.kuppelan@gmail.com",
+			"actionType": "FILL_TEXT",
+			"description": "NSP_PAX_DETAILS_PAGE_EMAIL"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "confirmEmail",
+			"value": "shibu.kuppelan@gmail.com",
+			"actionType": "FILL_TEXT",
+			"description": "NSP_PAX_DETAILS_PAGE_EMAIL"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//label[@for='infoverified']",
+			"actionType": "CLICK",
+			"description": "NSP_PAX_DETAILS_CONSENT"
+		},
+
+		{
+			"findByAttbuteType": "ID",
+			"id": "contactContinueBtn",
+			"actionType": "CLICK",
+			"description": "NSP_PAX_DETAILS_PAGE_CONTINUE"
+		},
+
+		{
+			"findByAttbuteType": "LINK_TEXT",
+			"linkText": "Continue",
+			"actionType": "WAIT",
+			"description": "NSP_PAX_DETAILS_PAGE_WAIT_FOR_ANCILLARIES_PAGE"
+		},
+
+		{
+			"findByAttbuteType": "LINK_TEXT",
+			"linkText": "Continue",
+			"actionType": "CLICK",
+			"description": "NSP_ANCILLARIES_PAGE_CONTINUE"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//label[@for='terms']",
+			"actionType": "WAIT",
+			"description": "NSP_ANCILLARIES_PAGE_WAIT_FOR_ITINERARY_PAGE"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//label[@for='terms']",
+			"actionType": "CLICK",
+			"description": "NSP_ITINERARY_PAGE_TERMS"
+		},
+
+		{
+			"findByAttbuteType": "XPATH",
+			"xPath": "//button[@id='payment']",
+			"actionType": "CLICK",
+			"description": "NSP_ITINERARY_PAGE_PAYMENT"
+		}
+	]
+}

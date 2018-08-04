@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="utf-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<link type="image/x-icon" href="/cms/resourcesCPM/images/favicon.ico"
+			rel="shortcut icon" />
+		<title>Book a trip | Qatar Airways</title>
+		<!-- Application specific styles -->
+		<link rel="stylesheet" type="text/css"
+			href="/cms/resourcesCPM/dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css"
+			href="/cms/resourcesCPM/dist/css/bootstrap-theme.css" />
+		<link rel="stylesheet" type="text/css"
+			href="/cms/resourcesCPM/dist/css/bootstrap-accessibility.css" />
+		<link rel="stylesheet" type="text/css"
+			href="/cms/resourcesCPM/styles/en-ibe-styles.css?ver=10" />
+		<link rel="stylesheet" type="text/css" href="/cms/resourcesCPM/styles/slick.css" />
+		<link rel="stylesheet" type="text/css" href="/cms/resourcesCPM/styles/fonts.css" />
+		<link rel="stylesheet" type="text/css"
+			href="/cms/resourcesCPM/styles/selectric.css" />
+		<link rel="stylesheet" type="text/css"
+			href="/cms/resourcesCPM/styles/jquery-ui.css" />
+		<!-- <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300"/> -->
+		<link rel="stylesheet" type="text/css"
+			href="/cms/resourcesCPM/styles/ibe_printstyles.css" />
+		<!-- Page specific styles -->
+		<link rel="stylesheet" type="text/css"
+			href="/cms/resourcesCPM/styles/login.css?ver=11" />
+	</head>
+	<body onLoad="disableBackButton();">
+
+		<!-- start skip-nav -->
+		<div style="height: 1px; display: block;" id="skip-nav">
+			<ul>
+				<li>
+					<a href="#skipNav" accesskey="p" title="Skip to page content">Skip to main content</a>
+				</li>
+				<!-- <li><a href="#nav" accesskey="n" title="Skip to main navigation 
+					menu">Site Navigation</a></li> <li><a href="#search" accesskey="s" title="Skip 
+					to search">Search</a></li> <li><a href="#footer" accesskey="f" title="Skip 
+					to footer (ctrl/alt + f)">Footer</a></li> -->
+			</ul>
+		</div>
+		<!-- end skip-nav -->
+		<!-- Full page loader -->
+		<div id="preloader">
+			<h1>
+				<span class="noVisible">Processing your request</span>
+			</h1>
+			<div id="status">
+				<em class="fa fa-spinner fa-spin"></em>
+			</div>
+		</div>
+		<!-- Header section -->
+		<form id="logoutForm" name="logoutForm" method="post"
+			action="/nsp/views/search.xhtml" enctype="application/x-www-form-urlencoded">
+			<header id="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-3" title="Qatar Airways">
+
+							<a href="http://uatqrauthor.qatarairways.com.qa/in/en/homepage.page">
+								<img src="/cms/resourcesCPM/images/qatarAirLogo.png" alt="Qatar Airways" />
+								<span class="noVisible">home page</span>
+							</a>
+							<a href="http://www.qatarairways.com/qa/en/oneworld.page">
+								<img src="/cms/resourcesCPM/images/oneWorldLogo.png" alt="One World" />
+								<span class="noVisible"> home page</span>
+							</a>
+						</div>
+						<div class="col-sm-7">
+							<div class="flR loginLink">
+								<a href="#" onclick="processLoginActivity('SEARCH_BKG');">Log-in</a>
+							</div>
+						</div>
+
+						<input type="hidden" name="isLoggedIn" value="false" id="isLoggedIn" />
+					</div>
+				</div>
+				<input id="isManageBookingFlow" name="isManageBookingFlow"
+					value="" type="hidden" />
+				<input id="isChangeFlightFlow" name="isChangeFlightFlow"
+					value="false" type="hidden" />
+				<input id="viewDetailsLable" name="viewDetailsLable" value="More details"
+					type="hidden" />
+				<input id="hideDetailsLable" name="hideDetailsLable" value="Hide"
+					type="hidden" />
+			</header>
+			<input type="hidden" name="searchToken" value="" />
+			<input type="hidden" name="logoutForm_SUBMIT" value="1" />
+			<input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:1"
+				value="WuVJakvh4nqdLqTrnYslM6OjQsG0DLSvmA8i+uzg9wlVMW50"
+				autocomplete="off" />
+		</form>
+		<form id="loginActivityForm" name="loginActivityForm" method="post"
+			action="/nsp/views/search.xhtml" enctype="application/x-www-form-urlencoded">
+			<input id="loginActivityForm:activityCode" name="loginActivityForm:activityCode"
+				value="" type="hidden" />
+			<input id="loginActivityForm:exbPaymentType" name="loginActivityForm:exbPaymentType"
+				value="" type="hidden" />
+			<script type="text/javascript"
+				src="/nsp/javax.faces.resource/jsf.js.xhtml?ln=javax.faces"></script>
+			<button id="loginActivityForm:loginActivitySubmit" name="loginActivityForm:loginActivitySubmit"
+				type="submit"
+				onclick="jsf.util.chain(document.getElementById('loginActivityForm:loginActivitySubmit'), event,'jsf.ajax.request(\'loginActivityForm:loginActivitySubmit\',event,{execute:\'@form \',render:\'logoutForm \',onevent:showwaitingpage,\'javax.faces.behavior.event\':\'action\'})'); return false;"
+				style="display: none" data-jsfc="h:commandLink"></button>
+			<input type="hidden" name="searchToken" value="" />
+			<input type="hidden" name="loginActivityForm_SUBMIT" value="1" />
+			<input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:2"
+				value="WuVJakvh4nqdLqTrnYslM6OjQsG0DLSvmA8i+uzg9wlVMW50"
+				autocomplete="off" />
+		</form>
+
+		<div>
+			<form id="validateForm" name="validateForm" method="post"
+				action="/nsp/views/search.xhtml" enctype="application/x-www-form-urlencoded">
+				<div class="container">
+					<div class="row">
+						<div id="validateForm:errorPanel" accessKey="s" tabIndex="-1"></div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					try{
+					setHighlight('');
+					}catch(e){}
+				</script>
+				<input type="hidden" name="searchToken" value="" />
+				<input type="hidden" name="validateForm_SUBMIT" value="1" />
+				<input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:3"
+					value="WuVJakvh4nqdLqTrnYslM6OjQsG0DLSvmA8i+uzg9wlVMW50"
+					autocomplete="off" />
+			</form>
+
+		</div>
+
+		<!-- Main content section -->
+		<div>
+			<div class="container">
+				<form id="searchFlightsForm" name="searchFlightsForm" method="post"
+					action="/nsp/views/search.xhtml" enctype="application/x-www-form-urlencoded">
+					<div id="searchFlightsForm:hideLoader">
+						<script type="text/javascript">
+							document.getElementById('preloader').style.display = 'none';
+						</script>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-lg-12 modify-search-context search-box-main">
+
+							<div class="row">
+								<span>
+									<a href="#" class="close" title="close" data-toggle="collapse"
+										data-target="#collapseExample" aria-expanded="false">
+										<span class="noVisible">close</span>
+									</a>
+								</span>
+								<div class="col-md-12 col-lg-12">
+									<div class="form-group multi-main">
+										<fieldset class="radiobtn">
+											<legend style="display:none">Flight Route</legend>
+											<table id="searchFlightsForm:tirpType">
+												<tr>
+													<td>
+														<input id="searchFlightsForm:tirpType:0" type="radio"
+															name="searchFlightsForm:tirpType" checked="checked"
+															value="RETURN_TRIP"
+															onchange="jsf.ajax.request('searchFlightsForm:tirpType',event,{execute:'@form ',render:'searchFlightsForm:tabs ',onevent:handleTripChooseEvent,'javax.faces.behavior.event':'valueChange'})" />
+														<label for="searchFlightsForm:tirpType:0"> Return</label>
+													</td>
+													<td>
+														<input id="searchFlightsForm:tirpType:1" type="radio"
+															name="searchFlightsForm:tirpType" value="ONE_WAY"
+															onchange="jsf.ajax.request('searchFlightsForm:tirpType',event,{execute:'@form ',render:'searchFlightsForm:tabs ',onevent:handleTripChooseEvent,'javax.faces.behavior.event':'valueChange'})" />
+														<label for="searchFlightsForm:tirpType:1"> One-way</label>
+													</td>
+													<td>
+														<input id="searchFlightsForm:tirpType:2" type="radio"
+															name="searchFlightsForm:tirpType" value="MULTICITY"
+															onchange="jsf.ajax.request('searchFlightsForm:tirpType',event,{execute:'@form ',render:'searchFlightsForm:tabs ',onevent:handleTripChooseEvent,'javax.faces.behavior.event':'valueChange'})" />
+														<label for="searchFlightsForm:tirpType:2"> Multi-city</label>
+													</td>
+												</tr>
+											</table>
+
+										</fieldset>
+									</div>
+								</div>
+							</div>
+							<div id="searchFlightsForm:tabs">
+								<div id="roundTrip" class="row">
+									<div class="col-md-8 col-lg-8 multi">
+										<div
+											class="form-group from-align search-main-label col-lft-rft originGroup">
+											<label class="control-label">From</label>
+											<div class="inner-addon left-addon">
+												<i class="form-icon from-icon"></i>
+												<input name="searchFlightsForm:j_id_41" value=""
+													id="fromAddress" placeholder="Your place of departure"
+													class="form-control originInput" type="text" />
+											</div>
+										</div>
+
+										<div class="multi-arrow-box search-main-label">
+											<div class="inner-addon">
+												<button class="sprit-icons swapicon" type="button"
+													id="swaplocation" aria-label="Swap departure and arrival destinations">
+												</button>
+											</div>
+										</div>
+										<div
+											class="form-group from-align search-main-label col-lft-rft destnGroup">
+											<label>To</label>
+											<div class="inner-addon left-addon">
+												<i class="form-icon to-icon"></i>
+												<input name="searchFlightsForm:j_id_43" value=""
+													id="toAddress" placeholder="Your destination" class="form-control destInput"
+													type="text" />
+											</div>
+										</div>
+
+										<div class="form-group search-main-label col-lft-rft">
+											<label class="control-label" for="date-picker-3">Departure</label>
+											<div class="inner-addon left-addon">
+												<i for="date-picker-3" class="form-icon cal-icon"></i>
+												<input name="searchFlightsForm:j_id_45" value=""
+													id="departing" placeholder="When do you want to go?"
+													class="md-date-picker form-control onwardDate" type="text" />
+											</div>
+										</div>
+										<div class="form-group search-main-label col-lft-rft">
+											<label class="control-label">Return</label>
+											<div class="inner-addon left-addon">
+												<i class="form-icon cal-icon"></i>
+												<input name="searchFlightsForm:j_id_49" value=""
+													id="returnTDInput" placeholder="When do you want to return?"
+													class="form-control" type="text" />
+											</div>
+										</div>
+										<div class="main-divider-shadow">
+											<div class="passen-inline search-box-main-divider">
+												<input type="hidden" value="12+ years" id="adtWOTeenager"
+													class="adtWOTeenager" />
+												<input type="hidden" value="(16+ yrs)" id="adtWTeenager"
+													class="adtWTeenager" />
+												<div class="form-group family-select-box col-xs-8 col-lft-rft">
+													<div class="form-group family-select col-lft-rft">
+														<label>Adult</label>
+														<div class="selectbox resetsetwidth">
+															<select id="searchFlightsForm:days" name="searchFlightsForm:days"
+																size="1"
+																onchange="jsf.ajax.request('searchFlightsForm:days',event,{render:'searchFlightsForm:years searchFlightsForm:months searchFlightsForm:teenager searchFlightsForm:ofw_pax ','javax.faces.behavior.event':'change'})"
+																class="form-control">
+																<option value="0">0</option>
+																<option value="1" selected="selected">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+															</select>
+														</div>
+														<span class="family-yrs adtAge">12+ years</span>
+													</div>
+													<div class="form-group family-select col-lft-rft ofw_pax"
+														style="display:none">
+														<label for="searchFlightsForm:ofw_pax">OFW</label>
+														<div class="selectbox resetsetwidth">
+															<select id="searchFlightsForm:ofw_pax" name="searchFlightsForm:ofw_pax"
+																size="1"
+																onchange="jsf.ajax.request('searchFlightsForm:ofw_pax',event,{render:'searchFlightsForm:teenager searchFlightsForm:years searchFlightsForm:months ','javax.faces.behavior.event':'change'})"
+																class="form-control">
+																<option value="0" selected="selected">0</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+															</select>
+														</div>
+														<span class="family-yrs ofwAge">Overseas Filipino Workers</span>
+													</div>
+													<div class="form-group family-select col-lft-rft teenagers"
+														style="display:none">
+														<label for="searchFlightsForm:teenager">Teenager</label>
+														<div class="selectbox resetsetwidth">
+															<select id="searchFlightsForm:teenager" name="searchFlightsForm:teenager"
+																size="1"
+																onchange="jsf.ajax.request('searchFlightsForm:teenager',event,{render:'searchFlightsForm:years searchFlightsForm:months searchFlightsForm:ofw_pax ','javax.faces.behavior.event':'change'})"
+																class="form-control">
+																<option value="0" selected="selected">0</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+															</select>
+														</div>
+														<span class="family-yrs">(12-15 yrs)</span>
+													</div>
+													<div class="form-group family-select col-lft-rft">
+														<label>Child</label>
+														<div class="selectbox resetsetwidth">
+															<select id="searchFlightsForm:months" name="searchFlightsForm:months"
+																size="1"
+																onchange="jsf.ajax.request('searchFlightsForm:months',event,{render:'searchFlightsForm:ofw_pax searchFlightsForm:teenager ','javax.faces.behavior.event':'change'})"
+																class="form-control">
+																<option value="0" selected="selected">0</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+															</select>
+														</div>
+														<span class="family-yrs">2-11 years</span>
+													</div>
+													<div class="form-group family-select col-lft-rft">
+														<label>Infant</label>
+														<div class="selectbox resetsetwidth">
+															<select id="searchFlightsForm:years" name="searchFlightsForm:years"
+																size="1" class="form-control">
+																<option value="0" selected="selected">0</option>
+																<option value="1">1</option>
+															</select>
+														</div>
+														<span class="family-yrs">Under 2 years</span>
+													</div>
+												</div>
+												<div class="form-group from-align col-xs-5 col-lft-rft">
+													<div class="inner-addon showpremium left-addon chkbox flL">
+														<input id="sametoall" name="sametoall" value="true"
+															type="checkbox" />
+														<label for="sametoall">
+															Show only Premium Class
+															<span class="small">(Business / First)</span>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="passen-inline">
+											<div class="form-group col-xs-12 family-select-box col-lft-rft">
+												<label>Promo code (optional)</label>
+												<div class="inner-addon">
+													<div class="form-group col-xs-6 col-lft-rft">
+														<input name="searchFlightsForm:j_id_4z" value=""
+															id="promoCode" class="form-control" type="text" />
+													</div>
+													<div class="form-group col-xs-5 col-lft-rft">
+														<button id="searchFlightsForm:roSearchFlights"
+															name="searchFlightsForm:roSearchFlights" type="submit"
+															onclick="jsf.util.chain(document.getElementById('searchFlightsForm:roSearchFlights'), event,'jsf.ajax.request(\'searchFlightsForm:roSearchFlights\',event,{execute:\'@form \',render:\'validateForm:errorPanel \',onevent:handleSearchCallBack,\'javax.faces.behavior.event\':\'action\'})'); return false;"
+															class="btn btn-style" data-jsfc="h:commandLink">
+															Search
+														</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<input type="hidden" name="searchToken" value="" />
+					<input type="hidden" name="searchFlightsForm_SUBMIT" value="1" />
+					<input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:4"
+						value="WuVJakvh4nqdLqTrnYslM6OjQsG0DLSvmA8i+uzg9wlVMW50"
+						autocomplete="off" />
+				</form>
+			</div>
+
+		</div>
+
+		<div class="modal fade" id="currentlyinactive" tabindex="-1" role="dialog"
+			aria-labelledby="currentlyinactive" aria-hidden="true">
+			<div class="modal-dialog g-login" tabindex="0">
+				<div class="modal-content">
+					<!-- <div class="modal-header"> <button type="button" class="close" 
+						data-dismiss="modal" aria-hidden="true"></button> </div> -->
+					<div class="modal-body" style="padding-right:0">
+						<form id="sessionActivate" name="sessionActivate" method="post"
+							action="/nsp/views/search.xhtml" enctype="application/x-www-form-urlencoded">
+							<div class="confirm-box">
+								<div class="modal-title">You are currently inactive.</div>
+								<p>
+									<strong>This session has been inactive for at least 10 minutes,
+										please try again.</strong>
+								</p>
+								<span>You can view your previous flight selection details and
+									fare availability.
+								</span>
+								<input id="j_id_6m" name="j_id_6m"
+									value="Load your previous flight selection." class="btn btn-style-inactive btn-style flL"
+									type="submit" />
+
+								<p>
+									<br />
+								</p>
+								<div>
+									<a
+										href="https://aemuatpublish.qatarairways.com.qa/qr/nspLinkRedirection?viewId=homePage&amp;nspFlow=true&amp;selLang=en"
+										class="btn btn-style-inactive btn-style flR">Back to home</a>
+								</div>
+
+								<div class="clear">
+									<em>clear</em>
+								</div>
+							</div>
+							<input type="hidden" name="searchToken" value="" />
+							<input type="hidden" name="sessionActivate_SUBMIT" value="1" />
+							<input type="hidden" name="javax.faces.ViewState"
+								id="j_id__v_0:javax.faces.ViewState:5" value="WuVJakvh4nqdLqTrnYslM6OjQsG0DLSvmA8i+uzg9wlVMW50"
+								autocomplete="off" />
+						</form>
+					</div>
+				</div>
+
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<div class="modal fade" id="Sessionexpired" tabindex="-1" role="dialog"
+			aria-labelledby="Sessionexpired" aria-hidden="true">
+			<div class="modal-dialog g-login" tabindex="0">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="confirm-box">
+							<form id="searchFlights" name="searchFlights" method="post"
+								action="/nsp/views/search.xhtml" enctype="application/x-www-form-urlencoded">
+								<div class="modal-title" tabindex="0">This session has expired,
+									please try again.</div>
+								<p>Your session has ended due to inactivity, please try again.</p>
+								<div class="webhome">
+									<a
+										href="https://aemuatpublish.qatarairways.com.qa/qr/nspLinkRedirection?viewId=homePage&amp;nspFlow=true&amp;selLang=en"
+										class="btn btn-style flR">Back to home</a>
+								</div>
+								<div class="clear">
+									<em class="noVisible">clear</em>
+								</div>
+								<input type="hidden" name="searchToken" value="" />
+								<input type="hidden" name="searchFlights_SUBMIT" value="1" />
+								<input type="hidden" name="javax.faces.ViewState"
+									id="j_id__v_0:javax.faces.ViewState:6" value="WuVJakvh4nqdLqTrnYslM6OjQsG0DLSvmA8i+uzg9wlVMW50"
+									autocomplete="off" />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="rdmLgtModal" tabindex="-1" role="dialog"
+			aria-hidden="true" aria-labelledby="rdmLgtModal">
+			<div class="modal-dialog g-login width750" tabindex="0">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="confirm-box">
+							<input type="hidden" id="showRdmLgtModal" value="false" />
+							<form id="rdmBkgLgtForm" name="rdmBkgLgtForm" method="post"
+								action="/nsp/views/search.xhtml" enctype="application/x-www-form-urlencoded">
+								<div class="modal-title" tabindex="0">Logged out</div>
+								You have logged out of your acount. Please log in to your
+								Privilege Club Account or select the cash payment option to
+								complete your transaction.
+								<p>
+								</p>
+								<div class="row okButtonRow">
+									<div class="col-md-3 cancelButton">
+										<button class="btn btn-white" type="button" id="ctnBkUsingCashBtn"
+											onclick="processLoginActivity('RVE_SEARCH');">
+											Continue booking using cash
+										</button>
+									</div>
+									<div class="col-md-3 okButton">
+										<button id="rdmBkgLgtForm:LoginCtnRdmBtn" name="rdmBkgLgtForm:LoginCtnRdmBtn"
+											onclick="processLoginActivity('RDM_BKG');" class="btn popupButn"
+											type="button">
+											Log in &amp;amp; book using Qmiles
+										</button>
+									</div>
+								</div>
+								<div class="clear">
+									<em>clear</em>
+								</div>
+								<input type="hidden" name="searchToken" value="" />
+								<input type="hidden" name="rdmBkgLgtForm_SUBMIT" value="1" />
+								<input type="hidden" name="javax.faces.ViewState"
+									id="j_id__v_0:javax.faces.ViewState:7" value="WuVJakvh4nqdLqTrnYslM6OjQsG0DLSvmA8i+uzg9wlVMW50"
+									autocomplete="off" />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer section -->
+		<footer id="footer" style="">
+			<div class="footer">
+				<div class="container">
+					<div class="row f-row2">
+						<div>
+							<p>© Qatar Airways. All rights reserved</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Page Loader -->
+
+		<!-- Application specific scripts -->
+		<!-- Scripts Tags -->
+		<script type="text/javascript" src="/cms/resourcesCPM/script/jquery-2.0.2.min.js"></script>
+		<script type="text/javascript" src="/cms/resourcesCPM/dist/js/bootstrap.min.js?ver=1"></script>
+		<script type="text/javascript"
+			src="/cms/resourcesCPM/dist/js/bootstrap-accessibility.js"></script>
+		<script type="text/javascript" src="/cms/resourcesCPM/js/jquery.selectric.min.js"></script>
+		<script type="text/javascript" src="/cms/resourcesCPM/script/customjs.js?ver=1"></script>
+		<script type="text/javascript" src="/cms/resourcesCPM/script/fareDisplay.js?ver=7"></script>
+		<script type="text/javascript" src="/cms/resourcesCPM/js/s_code.js"></script>
+		<script type="text/javascript" src="/cms/resourcesCPM/js/qrAnalytics.js?ver=6"></script>
+		<script src="/cms/resourcesCPM/script/callBackScript.js?ver=3"></script>
+		<script src="/cms/resourcesCPM/js/sessionTimeOut.js"></script>
+
+
+		<!-- Page Loader -->
+		<script type="text/javascript">
+			function disableBack() { window.history.forward()
+			}
+			window.onload = disableBack();
+			window.onpageshow = function(evt) { if
+			(evt.persisted) disableBack() }
+
+			//reduce font size price when it's
+			leangth greater then 8 letter
+			$(document).ready(function(e) {
+			$(".outbound-fifteendays-cal h5, .return-fifteendays-cal
+			h5").each(function() {
+			var priceLength = $(this).text().length;
+			if(priceLength > 8)
+			{
+			$(this).parents(".modal").addClass("priceLimit")
+			$(".outbound-fifteendays-cal h5, .return-fifteendays-cal
+			h5").css({'font-size':'12px'});
+			}
+			});
+
+			$(".thirtyDaysCal h5,
+			.cal-fly-details h5 ").each(function(){
+			var priceLength =
+			$(this).text().length;
+			if(priceLength > 8){
+			$(".thirtyDaysCal
+			h5").css({'font-size':'12px'});
+			}
+			});
+			});
+		</script>
+
+		<script type="text/javascript">
+			(function ($) {
+			$.support.placeholder =
+			('placeholder' in document.createElement('input'));
+			})(jQuery);
+
+			//fix
+			for IE7 and IE8
+			//fix for IE7 and IE8
+			$(function () {
+			if
+			(!$.support.placeholder) {
+			$("[placeholder]").focus(function () {
+			if
+			($(this).val() == $(this).attr("placeholder")) $(this).val("");
+			}).blur(function () {
+			if ($(this).val() == "")
+			$(this).val($(this).attr("placeholder"));
+			}).blur();
+
+			$("[placeholder]").parents("form").submit(function () {
+			$(this).find('[placeholder]').each(function() {
+			if ($(this).val() ==
+			$(this).attr("placeholder")) {
+			$(this).val("");
+			}
+			});
+			});
+			}
+			});
+		</script>
+		<!-- Page specific scripts -->
+
+		<input type="hidden" id="search_language_code" value="en" />
+		<input type="hidden" id="city_list_loc"
+			value="https://teststg.qatarairways.com.qa/content/dam/Qatar/common" />
+		<input type="hidden" id="pod_map_loc"
+			value="https://teststg.qatarairways.com.qa/content/dam/Qatar/common/booking_toRoutes" />
+		<input type="hidden" id="booking_city_list_loc" value="/cms/resourcesCPM/data/cityList_en.js" />
+		<input type="hidden" id="city_list_support_langs" value="en,ar,de,es,fr,it,ja,ko,pt,ru,tr,zh" />
+		<!--<input type="hidden" id="language_code" value="en"/> -->
+
+		<script src="/cms/resourcesCPM/script/datepicker/jquery-ui.js"></script>
+
+		<script type="text/javascript" src="/cms/resourcesCPM/data/cityList_en.js"></script>
+		<script type="text/javascript" src="/cms/resourcesCPM/js/qrAutoComplete.js?ver=5"></script>
+
+		<script src="/cms/resourcesCPM/js/search.js"></script>
+		<script src="/cms/resourcesCPM/js/searchFlightsATC.js"></script>
+		<script type="text/javascript" src="/cms/resourcesCPM/js/s_code.js"></script>
+		<script src="/cms/resourcesCPM/js/qrAnalytics.js?ver=6"></script>
+
+		<!-- Close button script -->
+		<input type="hidden" class="languageKey" value="en" />
+	</body>
+</html>
