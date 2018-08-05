@@ -9,9 +9,9 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
 import com.qr.test.env.config.CoreEnvConfig;
@@ -29,12 +29,9 @@ public class EnvironmentConfigInitializer {
 		coreEnvConfig = loadAndGetConfiguration();
 		switch (coreEnvConfig.getBrowserType()) {
 		case GOOGLE_CHROME:
-			configureSystemProperties("/com/test/env/config/chrome/systemProperties.json");
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("window-size=2048,768");
-			DesiredCapabilities cap = DesiredCapabilities.chrome();
-			cap.setCapability(ChromeOptions.CAPABILITY, options);		
-			webDriver = new ChromeDriver(cap);
+			options.addArguments("--start-maximized");
+			webDriver = new ChromeDriver(options);
 			break;
 		case INTERNET_EXPLORER:
 			webDriver = new InternetExplorerDriver();
@@ -44,6 +41,9 @@ public class EnvironmentConfigInitializer {
 			break;
 		case SAFARI:
 			webDriver = new SafariDriver();
+			break;
+		case FIREFOX:
+			webDriver = new FirefoxDriver();
 			break;
 		default:
 			break;
@@ -65,6 +65,7 @@ public class EnvironmentConfigInitializer {
 		CoreEnvConfig coreEnvConfig = null;
 		coreEnvConfig = JSONReaderUtility.getJsonReaderUtility().readJson("/com/test/env/config/config.json",
 				CoreEnvConfig.class);
+		configureSystemProperties("/com/test/env/config/systemProperties.json");
 		return coreEnvConfig;
 	}
 

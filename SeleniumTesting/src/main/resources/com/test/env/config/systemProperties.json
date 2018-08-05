@@ -1,0 +1,4 @@
+{
+	"webdriver.chrome.driver": "F:\\Softwares\\chromedriver_win32\\chromedriver.exe",
+	"webdriver.gecko.driver": "F:\\Softwares\\geckodriver-v0.21.0-win64\\geckodriver.exe"
+}

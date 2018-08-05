@@ -73,15 +73,14 @@
 
 		{
 			"findByAttbuteType": "XPATH",
-			"xPath": "//span[@data-val='0,,0']",
-			"value": "4000",
+			"xPath": "//a[@id='radiobtnAnchor']/child::span[@data-val='0,,0'][1]",
 			"actionType": "WAIT",
 			"description": "NSP_WAIT_FOR_INDEX_PAGE_LOAD"
 		},
 
 		{
 			"findByAttbuteType": "XPATH",
-			"xPath": "//span[@data-val='0,,0']",
+			"xPath": "//a[@id='radiobtnAnchor']/child::span[@data-val='0,,0'][1]",
 			"actionType": "CLICK",
 			"description": "NSP_INDEX_PAGE_FLIGHT_CABIN_SELECTION"
 		},

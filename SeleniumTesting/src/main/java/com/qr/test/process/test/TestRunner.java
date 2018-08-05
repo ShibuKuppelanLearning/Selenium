@@ -54,15 +54,20 @@ public class TestRunner {
 					break;
 
 				}
+				sleep(3000);
 			} else {
 				webElement = getWebElementByAction(webDriver, action);
 				performAction(webDriver, webElement, action);
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				sleep(1000);
 			}
+		}
+	}
+
+	private void sleep(long sleepTime) {
+		try {
+			Thread.sleep(sleepTime);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 
